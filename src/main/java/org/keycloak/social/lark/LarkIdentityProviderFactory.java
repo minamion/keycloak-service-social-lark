@@ -14,7 +14,7 @@ import org.keycloak.models.KeycloakSession;
 public class LarkIdentityProviderFactory extends AbstractIdentityProviderFactory<LarkIdentityProvider>
         implements SocialIdentityProviderFactory<LarkIdentityProvider> {
 
-    public static final String PROVIDER_ID = "lark";
+    public static final String PROVIDER_ID  = "lark";
 
     @Override
     public String getName() {
@@ -26,6 +26,10 @@ public class LarkIdentityProviderFactory extends AbstractIdentityProviderFactory
         return new LarkIdentityProvider(session, new OAuth2IdentityProviderConfig(model));
     }
 
+    @Override
+    public IdentityProviderModel createConfig() {
+        return new OAuth2IdentityProviderConfig();
+    }
     @Override
     public String getId() {
         return PROVIDER_ID;
