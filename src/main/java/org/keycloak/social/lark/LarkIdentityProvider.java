@@ -1,7 +1,6 @@
 package org.keycloak.social.lark;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.jboss.logging.Logger;
 
@@ -22,15 +21,13 @@ import org.keycloak.events.EventType;
 import org.keycloak.http.HttpRequest;
 import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.RealmModel;
-import org.keycloak.protocol.oidc.OIDCLoginProtocol;
 import org.keycloak.services.ErrorPage;
 import org.keycloak.services.messages.Messages;
 import org.keycloak.sessions.AuthenticationSessionModel;
 import org.keycloak.util.JsonSerialization;
-
+import org.keycloak.vault.VaultStringSecret;
 
 import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Context;
@@ -38,14 +35,13 @@ import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriBuilder;
 import jakarta.ws.rs.core.UriInfo;
-import org.keycloak.vault.VaultStringSecret;
+
 
 import java.io.IOException;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

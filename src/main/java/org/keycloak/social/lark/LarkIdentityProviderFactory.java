@@ -7,8 +7,8 @@ import org.keycloak.models.IdentityProviderModel;
 import org.keycloak.models.KeycloakSession;
 
 /**
- * @Author: guanxiatao
- * @Date: 2021/3/15 5:14 下午
+ * @Author: Closure
+ * @Date: 2024/2/10 23:01
  */
 
 public class LarkIdentityProviderFactory extends AbstractIdentityProviderFactory<LarkIdentityProvider>
